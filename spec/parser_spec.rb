@@ -5,6 +5,8 @@ This is a description.
 
 foo - The Type first argument.
 bar - The OtherType second argument.
+
+Returns the String thingy.
 TOMDOC
 
 describe TomDoc::Parser do
@@ -17,5 +19,9 @@ describe TomDoc::Parser do
 
   it "parses the arguments" do
     definition.arguments.should == [["foo", "The Type first argument."], ["bar", "The OtherType second argument."]]
+  end
+
+  it "parses the return section" do
+    definition.returns.should == "the String thingy."
   end
 end
